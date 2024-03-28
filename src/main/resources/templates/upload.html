@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+
+<head>
+    <title>
+        엑셀 파일 업로드
+    </title>
+</head>
+
+<body>
+
+    <h2>엑셀 파일 업로드 예제</h2>
+    <form action="" method="POST" enctype="multipart/form-data">
+        <input type="file" name="excelFile">
+        <input type="submit" value="업로드">
+    </form>
+    &nbsp;
+    <table class="table active-table-tab">
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>이름</th>
+        </tr>
+        </thead>
+
+
+        <tbody>
+            <tr th:each="student : ${students}">
+                <td th:text="${student.getKey()}"></td>
+                <td th:text="${student.getValue()}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+
+</html>
